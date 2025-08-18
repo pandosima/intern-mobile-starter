@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0A8C29DB1F30B266B681FC2D /* libPods-Interns-Interns-Dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3FED73EDF2DF5E45C8D64F /* libPods-Interns-Interns-Dev.a */; };
-		0C80B921A6F3F58F76C31292 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		0C80B921A6F3F58F76C31292 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		476245ECD3B79D21DAF43589 /* libPods-Interns.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C59D028CB4CB55C40AE364 /* libPods-Interns.a */; };
 		5C2AF4388D37660780D9098B /* libPods-Interns-Interns-Stg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9528C2E2A6CA8198548CB28 /* libPods-Interns-Interns-Stg.a */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -46,6 +47,7 @@
 		B8903D9634409BC709620239 /* libPods-Interns-Interns-Rc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Interns-Interns-Rc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1879D3EE3D00D163EB6DF3 /* Pods-Interns-Interns-Rc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Interns-Interns-Rc.debug.xcconfig"; path = "Target Support Files/Pods-Interns-Interns-Rc/Pods-Interns-Interns-Rc.debug.xcconfig"; sourceTree = "<group>"; };
 		C9528C2E2A6CA8198548CB28 /* libPods-Interns-Interns-Stg.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Interns-Interns-Stg.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4C59D028CB4CB55C40AE364 /* libPods-Interns.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Interns.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FBBA31362E52C4EA005542BD /* Interns-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Interns-Info.plist"; path = "/Users/Projects/intern-mobile-starter/mobile/ios/Interns-Info.plist"; sourceTree = "<absolute>"; };
 		FBBA316B2E52C9A2005542BD /* Interns-Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interns-Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* (null) in Frameworks */,
+				0C80B921A6F3F58F76C31292 /* BuildFile in Frameworks */,
+				476245ECD3B79D21DAF43589 /* libPods-Interns.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +115,7 @@
 				8D3FED73EDF2DF5E45C8D64F /* libPods-Interns-Interns-Dev.a */,
 				B8903D9634409BC709620239 /* libPods-Interns-Interns-Rc.a */,
 				C9528C2E2A6CA8198548CB28 /* libPods-Interns-Interns-Stg.a */,
+				D4C59D028CB4CB55C40AE364 /* libPods-Interns.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
