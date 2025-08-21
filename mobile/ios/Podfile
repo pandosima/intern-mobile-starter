@@ -14,22 +14,8 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-# use_frameworks! :linkage => :static
-# $RNFirebaseAsStaticFramework = true
-# dynamic_frameworks = ['VisionCamera', 'RNWorklets']
 create_search_paths = ['VisionCamera']
-add_search_paths = ['RNWorklets']
-
-# Make all the other frameworks into static frameworks by overriding the static_framework function to return true
-# pre_install do |installer|
-#   installer.pod_targets.each do |pod|
-#     if dynamic_frameworks.include?(pod.name)
-#       def pod.build_type;
-#         Pod::BuildType.static_library
-#       end
-#     end
-#   end
-# end
+add_search_paths = ['RNWorklets', 'RNReanimated']
 
 target 'Interns' do
   config = use_native_modules!
@@ -69,19 +55,18 @@ target 'Interns' do
     installer.pods_project.targets.each do |target|
       if create_search_paths.include?(target.name)
         target.build_configurations.each do |config|
-          # Add a header search path
           config.build_settings['HEADER_SEARCH_PATHS'] ||= []
           config.build_settings['HEADER_SEARCH_PATHS'] << '$(inherited)'
           config.build_settings['HEADER_SEARCH_PATHS'] << '"${REACT_NATIVE_PATH}/ReactCommon/runtimeexecutor"' # Add your path here
 
           # Add a framework search path (if needed)
-          # config.build_settings['FRAMEWORK_SEARCH_PATHS'] ||= '$(inherited)'
-          # config.build_settings['FRAMEWORK_SEARCH_PATHS'] << '\n"${REACT_NATIVE_PATH}/ReactCommon/runtimeexecutor"' # Add your path here
+          # config.build_settings['FRAMEWORK_SEARCH_PATHS'] ||= []
+          # config.build_settings['FRAMEWORK_SEARCH_PATHS'] << '$(inherited)'
+          # config.build_settings['FRAMEWORK_SEARCH_PATHS'] << '"${REACT_NATIVE_PATH}/ReactCommon/runtimeexecutor"' # Add your path here
         end
       end
       if add_search_paths.include?(target.name)
         target.build_configurations.each do |config|
-          # Add a header search path
           config.build_settings['HEADER_SEARCH_PATHS'] << '"${REACT_NATIVE_PATH}/ReactCommon/runtimeexecutor"' # Add your path here
         end
       end

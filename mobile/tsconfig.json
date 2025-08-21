@@ -1,5 +1,18 @@
 {
   "extends": "@react-native/typescript-config",
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["**/node_modules", "**/Pods"]
+  "include": ["**/*.ts", "**/*.tsx", "js/modules/oauth/screens/index.tsx"],
+  "exclude": ["**/node_modules", "**/Pods"],
+  "compilerOptions": {
+    "baseUrl": ".", // Or the root of your source files, e.g., "src"
+    "paths": {
+      "@modules/*": ["js/modules/*"],
+      "@utils/*": ["js/utils/*"],
+      "@services/*": ["/js/services/*"],
+      "@components/*": ["js/components/*"],
+      "@themes/*": ["js/themes/*"],
+      "@hooks/*": ["js/hooks/*"],
+      "@localization/*": ["/js/localization/*"]
+      // Add all your defined aliases here
+    }
+  }
 }

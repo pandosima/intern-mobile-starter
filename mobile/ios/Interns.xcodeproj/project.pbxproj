@@ -1050,7 +1050,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = "Interns-Dev-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Interns-Dev";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -1083,7 +1082,6 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = "Interns-Dev-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Interns-Dev";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;

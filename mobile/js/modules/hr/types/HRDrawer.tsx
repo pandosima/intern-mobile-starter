@@ -1,0 +1,43 @@
+import { DrawerScreenProps } from '@react-navigation/drawer';
+
+export type HRDrawerParamList = {
+  HRDashboard: undefined;
+  RolesManagement: undefined;
+  EmployeesManagement: undefined;
+  CustomFields: undefined;
+  Contracts: undefined;
+  Offices: undefined;
+  Organization: undefined;
+  OrganizationTree: undefined;
+  OrganizationChart: undefined;
+  Leaves: undefined;
+  LeaveTypes: undefined;
+  LeaveRequests: undefined;
+  Approvals: undefined;
+  AppraisalsSection: undefined;
+  Templates: undefined;
+  Appraisals: undefined;
+  TimeTracking: undefined;
+  TimekeeperDeviceManagement: undefined;
+  TimeRecords: undefined;
+};
+
+export type HRDashboardScreenProps = DrawerScreenProps<HRDrawerParamList, 'HRDashboard'>;
+export type RolesManagementScreenProps = DrawerScreenProps<HRDrawerParamList, 'RolesManagement'>;
+export type EmployeesManagementScreenProps = DrawerScreenProps<HRDrawerParamList, 'EmployeesManagement'>;
+export type CustomFieldsScreenProps = DrawerScreenProps<HRDrawerParamList, 'CustomFields'>;
+export type ContractsScreenProps = DrawerScreenProps<HRDrawerParamList, 'Contracts'>;
+export type OfficesScreenProps = DrawerScreenProps<HRDrawerParamList, 'Offices'>;
+export type OrganizationScreenProps = DrawerScreenProps<HRDrawerParamList, 'Organization'>;
+export type OrganizationTreeScreenProps = DrawerScreenProps<HRDrawerParamList, 'OrganizationTree'>;
+export type OrganizationChartScreenProps = DrawerScreenProps<HRDrawerParamList, 'OrganizationChart'>;
+export type LeavesScreenProps = DrawerScreenProps<HRDrawerParamList, 'Leaves'>;
+export type LeaveTypesScreenProps = DrawerScreenProps<HRDrawerParamList, 'LeaveTypes'>;
+export type LeaveRequestsScreenProps = DrawerScreenProps<HRDrawerParamList, 'LeaveRequests'>;
+export type ApprovalsScreenProps = DrawerScreenProps<HRDrawerParamList, 'Approvals'>;
+export type AppraisalsSectionScreenProps = DrawerScreenProps<HRDrawerParamList, 'AppraisalsSection'>;
+export type TemplatesScreenProps = DrawerScreenProps<HRDrawerParamList, 'Templates'>;
+export type AppraisalsScreenProps = DrawerScreenProps<HRDrawerParamList, 'Appraisals'>;
+export type TimeTrackingScreenProps = DrawerScreenProps<HRDrawerParamList, 'TimeTracking'>;
+export type TimekeeperDeviceManagementScreenProps = DrawerScreenProps<HRDrawerParamList, 'TimekeeperDeviceManagement'>;
+export type TimeRecordsScreenProps = DrawerScreenProps<HRDrawerParamList, 'TimeRecords'>;

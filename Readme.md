@@ -49,7 +49,11 @@ yarn ios  --scheme "Interns-Dev"
 ```
 
 ## Debuging
-Follow the guide [here](https://reactnative.dev/docs/next/debugging) to debug the app
+Follow the guide [here](https://reactnative.dev/docs/debugging) to debug the app.
+
+Note:
+* Android Emulator can access your pc at ip address 10.0.2.2
+* iOS Simulator can access your pc by the host name 'localhost'
 
 ## Themimg
 We use [React Native Elements](https://reactnativeelements.com/docs) to boot up theming for the app. Make sure to read [this guide](https://reactnativeelements.com/docs/customizing) if you want to custome the theme for the app.
