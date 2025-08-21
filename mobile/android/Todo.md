@@ -1,0 +1,1 @@
+* Fllow [this guideline](https://developer.android.com/studio/write/create-app-icons), replace the default app icon by your apdaptive icon. 
