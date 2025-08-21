@@ -10,12 +10,13 @@ There are many Todo.md files and Todo texts on the UIs. Read those contents and 
 ## Requirements
 * This project use [React Native](https://reactnative.dev/) framwork. So make sure you follow [this guide](https://reactnative.dev/docs/set-up-your-environment) to setup the development environment.
 
-## Read more:
+## Read more
 We use these tools/libraries in the project. Make sure to take time for reading their document before jump into coding.
 * [Firebase](https://firebase.google.com): We use [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) to send notification, [Firebase Remote Config](https://firebase.google.com/docs/remote-config) to config evironement variable remotely, [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics) to track errors, [Google Analytics](http://firebase.google.com/docs/analytics) to analize the usages. These tools were integrated into project via [React Native Firebase](https://rnfirebase.io).
 * [React Navigation](https://reactnavigation.org/) was used for navigation between screens.
 * [Redux](https://redux.js.org) was used for managing app state and local caching. It was integrated via [Redux Toolkit](https://redux-toolkit.js.org).
 * [React Native Vision Camera Face Detector](https://github.com/luicfrr/react-native-vision-camera-face-detector) was used to detect the face and extract its features. We have forked the library and implement 3d face mesh dector. But we won't mention it here. For interns, just the orginal 2D version is required.
+* We use [React Native Elements](https://reactnativeelements.com/docs) to boot up theming for the app. Make sure to read [this guide](https://reactnativeelements.com/docs/customizing) if you want to custome the theme for the app.
 
 
 ## Signing config
@@ -64,9 +65,6 @@ Follow the guide [here](https://reactnative.dev/docs/debugging) to debug the app
 Note:
 * Android Emulator can access your pc at ip address 10.0.2.2
 * iOS Simulator can access your pc by the host name 'localhost'
-
-## Themimg
-We use [React Native Elements](https://reactnativeelements.com/docs) to boot up theming for the app. Make sure to read [this guide](https://reactnativeelements.com/docs/customizing) if you want to custome the theme for the app.
 
 ## Build variants
 * We have toltal 8 [build variants](https://developer.android.com/build/build-variants) for Android for 4 environments: `dev`, `rc`, `stg`, and `prod`. Each environent have 2 variants: `debug`, and `release`.
