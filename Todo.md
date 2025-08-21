@@ -1,0 +1,2 @@
+* Fllow [this guideline](https://developer.android.com/studio/write/create-app-icons), replace the default app icon by your apdaptive icon. 
+* Build and rund the app. Then read the `Todo.md` files (in each folders) and the `Todo` guides on the app's screens, and implement the features/screens as requierd.

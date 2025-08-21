@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".", // Or the root of your source files, e.g., "src"
+    "paths": {
+        "@modules/*": ["js/modules/*"],
+        "@utils/*": ["js/utils/*"],
+        "@services/*": ["/js/services/*"],
+        "@themes/*": ["js/themes/*"],
+        "@localization/*": ["/js/localization/*"]
+        // Add all your defined aliases here
+    }
+  }
+}

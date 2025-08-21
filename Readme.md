@@ -5,8 +5,18 @@ Make sure to check out the [web repository](https://github.com/pandosima/intern-
 
 You also need to install and run [ngrok](https://ngrok.com/downloads/) to create a free domain and forward to your pc. That help your mobile app (running on simulator) can access your REST APIs.
 
+There are many Todo.md files and Todo texts on the UIs. Read those contents and implement the required features/screens.
+
 ## Requirements
 * This project use [React Native](https://reactnative.dev/) framwork. So make sure you follow [this guide](https://reactnative.dev/docs/set-up-your-environment) to setup the development environment.
+
+## Read more:
+We use these tools/libraries in the project. Make sure to take time for reading their document before jump into coding.
+* [Firebase](https://firebase.google.com): We use [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging) to send notification, [Firebase Remote Config](https://firebase.google.com/docs/remote-config) to config evironement variable remotely, [Firebase Crashlytics](https://firebase.google.com/docs/crashlytics) to track errors, [Google Analytics](http://firebase.google.com/docs/analytics) to analize the usages. These tools were integrated into project via [React Native Firebase](https://rnfirebase.io).
+* [React Navigation](https://reactnavigation.org/) was used for navigation between screens.
+* [Redux](https://redux.js.org) was used for managing app state and local caching. It was integrated via [Redux Toolkit](https://redux-toolkit.js.org).
+* [React Native Vision Camera Face Detector](https://github.com/luicfrr/react-native-vision-camera-face-detector) was used to detect the face and extract its features. We have forked the library and implement 3d face mesh dector. But we won't mention it here. For interns, just the orginal 2D version is required.
+
 
 ## Signing config
 ### For Android
@@ -49,7 +59,11 @@ yarn ios  --scheme "Interns-Dev"
 ```
 
 ## Debuging
-Follow the guide [here](https://reactnative.dev/docs/next/debugging) to debug the app
+Follow the guide [here](https://reactnative.dev/docs/debugging) to debug the app.
+
+Note:
+* Android Emulator can access your pc at ip address 10.0.2.2
+* iOS Simulator can access your pc by the host name 'localhost'
 
 ## Themimg
 We use [React Native Elements](https://reactnativeelements.com/docs) to boot up theming for the app. Make sure to read [this guide](https://reactnativeelements.com/docs/customizing) if you want to custome the theme for the app.

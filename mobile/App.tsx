@@ -5,41 +5,37 @@
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+import React, { useEffect } from 'react';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/lib/integration/react';
+import { Text } from '@rneui/themed';
+import { ThemeProvider } from '@rneui/themed';
+import { initRemoteConfig } from './js/modules/firebase/remoteConfig';
+import { log } from './js/modules/firebase/crashlytics';
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
 
+import { theme } from './js/themes';
+import {store, persistor} from './js/store';
+import MainContainer from './js/containers/MainContainer';
+
+function App(): React.JSX.Element {
+  useEffect(() => {
+    initRemoteConfig();
+    log('App mounted.');
+  },[]);
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <PersistGate loading={<Text>Loading...</Text>} persistor={persistor}>
+          <MainContainer />
+        </PersistGate>
+      </Provider>
+    </ThemeProvider>
   );
 }
 
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
 
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+
 
 export default App;

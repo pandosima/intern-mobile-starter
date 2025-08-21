@@ -5,7 +5,7 @@ require Pod::Executable.execute_command('node', ['-p',
     {paths: [process.argv[1]]},
   )', __dir__]).strip
 
-platform :ios, min_ios_version_supported
+platform :ios, 15.5
 prepare_react_native_project!
 
 linkage = ENV['USE_FRAMEWORKS']
@@ -14,9 +14,15 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
+create_search_paths = ['VisionCamera']
+add_search_paths = ['RNWorklets', 'RNReanimated']
+
 target 'Interns' do
   config = use_native_modules!
 
+  use_frameworks! :linkage => :static
+  use_modular_headers!
+  $RNFirebaseAsStaticFramework = true
   use_react_native!(
     :path => config[:reactNativePath],
     # An absolute path to your application root.
@@ -25,17 +31,14 @@ target 'Interns' do
 
   target 'Interns-Dev' do
     inherit! :complete
-    # Pods for testing
   end
 
   target 'Interns-Rc' do
     inherit! :complete
-    # Pods for testing
   end
 
   target 'Interns-Stg' do
     inherit! :complete
-    # Pods for testing
   end
 
   post_install do |installer|
@@ -46,5 +49,27 @@ target 'Interns' do
       :mac_catalyst_enabled => false,
       # :ccache_enabled => true
     )
+    installer.pods_project.build_configurations.each do |config|
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    end
+    installer.pods_project.targets.each do |target|
+      if create_search_paths.include?(target.name)
+        target.build_configurations.each do |config|
+          config.build_settings['HEADER_SEARCH_PATHS'] ||= []
+          config.build_settings['HEADER_SEARCH_PATHS'] << '$(inherited)'
+          config.build_settings['HEADER_SEARCH_PATHS'] << '"${REACT_NATIVE_PATH}/ReactCommon/runtimeexecutor"' # Add your path here
+
+          # Add a framework search path (if needed)
+          # config.build_settings['FRAMEWORK_SEARCH_PATHS'] ||= []
+          # config.build_settings['FRAMEWORK_SEARCH_PATHS'] << '$(inherited)'
+          # config.build_settings['FRAMEWORK_SEARCH_PATHS'] << '"${REACT_NATIVE_PATH}/ReactCommon/runtimeexecutor"' # Add your path here
+        end
+      end
+      if add_search_paths.include?(target.name)
+        target.build_configurations.each do |config|
+          config.build_settings['HEADER_SEARCH_PATHS'] << '"${REACT_NATIVE_PATH}/ReactCommon/runtimeexecutor"' # Add your path here
+        end
+      end
+    end
   end
 end
